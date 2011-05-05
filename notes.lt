@@ -1,0 +1,71 @@
+@Include {paper-format}
+
+@Doc @Text @Begin
+
+|1rt 1.3 @Scale {Stat 231 Notes}
+@SB |1rt {Andrei Thorp}
+@SB |1rt {Spring 2011}
+
+@BB
+@BB Population @Defn {
+    Target @Defn {theoretical best case population}
+    @SB Study @Defn {actual population used for study}
+    @SB Sample @Defn {subset of the study population, used for sampling}
+    @SB Unit @Defn {individual atom of the population}
+}
+
+@BB PPDAC @Defn {Problem, plan, data, analysis, conclusion}
+
+@BB {PPDAC -- Data} @Defn {Can be discrete (individualized), continuous (like real
+numbers), categorical (not numerically valuable, like names), binary (categorical
+for two categories).}
+
+@BB {Data Transforms} @Defn {
+    Monotone @Defn {after the data is transformed, the original monotonic order
+is preserved.}
+    @SB {Monotone Decreasing} @Defn {like monotone, but order is reversed after
+the transform}
+    @SB {Affine} @Defn {in linear form @M{y = Ax + B}}
+    @SB {Log} @Defn {transform of @M{x --> log(x)}, where log is ln}
+}
+
+@BB Variate @Defn {characteristics of units}
+
+@BB Attributes @Defn {functions on units}
+
+@BB {Problem Types} @Defn {
+    Discriptive @Defn {involves learning about some attribute}
+    @SB Causative @Defn {finding a causal link between variates. One variate is
+'explanatory' and the other is 'response'}
+    @SB Predictive @Defn {predict value of a response variate for a given unit}
+}
+
+@BB Mean @Defn {@M{alpha(cdot)}, the attribute defining the average of the
+population}
+
+@BB Error @Defn {through the study, error may occur:
+    @SB {study error} @Defn @M{alpha(P sub {study}) - alpha(P sub {target})}
+    @SB {sample error} @Defn @M{alpha(S) - alpha(P sub {study})}
+}
+
+@BB {PPDAC -- Plan} @Defn {
+    Experimental @Defn {You can manipulate a study's variables.}
+    @SB Observational @Defn {Studies which are observational only.}
+}
+
+@BB {Kernel Density Estimate} @Defn { a smoothing algorithm for datasets}
+
+@BB Histogram @Defn {Continuous data is split into bins, and these bins are then
+plotted as a bar graph.}
+
+@BB {Symmetry"/"Skew} @Defn {Data plots may have a `tail' that goes left or right,
+and this is the direction of the skew. If there is no skew, then the data is
+symmetric}
+
+@BB {Frequency Polygon} @Defn {join the top centres of each histogram bar with
+lines to get the polygon}
+
+@BB {Cumulative Frequency Plot} @Defn {each bin of a histogram includes all the
+preceding bars}
+
+@End @Text
