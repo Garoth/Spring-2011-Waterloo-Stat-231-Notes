@@ -36,7 +36,7 @@ the transform}
 @BB {Problem Types} @Defn {
     Discriptive @Defn {involves learning about some attribute}
     @SB Causative @Defn {finding a causal link between variates. One variate is
-'explanatory' and the other is 'response'}
+`explanatory' and the other is `response'}
     @SB Predictive @Defn {predict value of a response variate for a given unit}
 }
 
@@ -62,10 +62,110 @@ plotted as a bar graph.}
 and this is the direction of the skew. If there is no skew, then the data is
 symmetric}
 
-@BB {Frequency Polygon} @Defn {join the top centres of each histogram bar with
+@BB {Frequency Polygon} @Defn {Join the top centres of each histogram bar with
 lines to get the polygon}
 
-@BB {Cumulative Frequency Plot} @Defn {each bin of a histogram includes all the
+@BB {Cumulative Frequency Plot} @Defn {Each bin of a histogram includes all the
 preceding bars}
+
+@BB {Empirical Rule} @Defn {For symmetric, unimodal distributions, if you know
+@M{mu} and @M{sigma}, then:
+@BulletList
+@LI {Approx @M{68%} of observations lie in @M{mu +- sigma}}
+@LI {Approx @M{95%} of observations lie in @M{mu +- 2 sigma}}
+@LI {Approx @M{99.73%} of observations lie in @M{mu +- 3 sigma}}
+@EndList
+}
+
+@BB {Event Independence} @Defn @M{P(A "|" B) = P(A "|" not B) = P(A)}
+
+@BB {Correlation} @Defn {@Math{r = {S sub XY} over sqrt {S sub XX S sub YY}}
+where @SB @Math{S sub XX = sum from {i=1} to {n} (x sub i - x overbar) sup 2} and
+@Math {S sub XY = sum from {i=1} to {n} ((x sub i - x overbar)(y sub i - y overbar))}
+@SB The closer the correlation is to @M{+- 1}, the better the correlation.}
+
+@BB {Time Series Plot} @Defn {A scatter plot that tracks against time: @M{(t, y(t)).}}
+
+@BB grey @Colour @Box {Midterm 1 Notes} @Defn {@RawBulletList
+@LI {Remember some probability stuff like union, conditional, independence}
+@LI {Very little calculation}
+@LI {Memorize some of the distributions so far}
+@LI {Write"/"memorize distributons' likelihood formulae}
+@EndList}
+
+@BB {MLE of Poisson Distribution} @Defn {A random variable of the Poisson distribution
+is @Math{P(Y=y)=f sub y (y) = {e sup {-lambda} lambda sup y} over y!}, for
+M{y = 0, 1, 2, ...}
+@SB So @Math{L(y sub 1, y sub 2, ..., y sub n; lambda) =
+{e sup {-lambda} lambda sup {y sub 1}} over {y sub 1 !} cdot
+{e sup {-lambda} lambda sup {y sub 2}} over {y sub 2 !} cdot ... cdot
+{e sup {-lambda} lambda sup {y sub n}} over {y sub n !} =
+{e sup {-n lambda} lambda sup {sum from {i=1} to {n} y sub i}} over
+{prod from {i=1} to {n} y sub i !}
+}
+@SB Now, lets take the ln of everything to make it simpler.
+@SB @Math{l(lambda) = -n lambda
++ln(lambda) sum from {i=1} to {n} y sub i - prod from {i=1} to {n} y sub i !}.
+@SB Take the derivitive of this and maximize... @M{lambda hat = y overbar}
+}
+
+@BB {Quick Review of Partial Derivitives} @Defn {Consider the function @Math{f(x, y) =
+3x sup 2 + 4xy sup 2 + 2y sup 2}. Find the partial derivatives with respect to:
+@BulletList
+@LI {x: @Math{{2f(x,y)} over 2x = 6x + 4y sup 2}}
+@LI {y: @Math{{2f(x,y)} over 2y = 8xy + 4y}}
+@EndList
+Pretty much: just ignore the other variable, treat it as a constant.}
+
+@BB {Simple Linear Regression MLEs} @Defn {
+     @Math{alpha hat = y overbar - beta hat x overbar}
+@SB  @Math{beta hat = {S sub {XY}} over {S sub XX}}
+@SB  @Math{sigma hat sup 2 = 1 over n sum from {i=1} to {n} (y sub i -
+alpha hat - beta hat x sub i ) sup 2 = 1 over n (S sub {YY} - beta hat S sub XY )}
+}
+
+@BB {Practice Problem for MLEs"/"Regression} @Defn {Consider the following dataset:
+
+@SB { @OneRow {{@Underline x
+//0.5f 100
+//0.5f 200
+//0.5f 300
+//0.5f 400
+//0.5f 500
+//0.5f 600
+//0.5f 700
+} |2f
+{@Underline y
+//0.5f 40
+//0.5f 50
+//0.5f 50
+//0.5f 70
+//0.5f 65
+//0.5f 65
+//0.5f 80
+}} |3f
+@OneRow {x = lbs of fertilizer per acre
+@SB y = wheat yield (bushels per acre)
+@SB Determine: |1f {
+@M{y hat = alpha hat + beta hat x}
+/0.5f @M{sigma hat sup 2}
+/0.5f @M{p hat = r = {S sub XY} over {sqrt{S sub XX S sub YY}}}
+/0.5f @M{r sup 2}
+}
+}
+}
+@SB Check using R -- make the two vectors, then use `summary(lm(x "~" y))'
+}
+
+
+
+
+
+@BB blue @Colour {Important Formulae} @Defn {
+@Math{sum from {i=1} to {n} i = {n(n+1)} over 2}
+@SB @Math{sum from {i=1} to {n} i sup 2 = {(n(n+1))} over 2 cdot {2n+1} over 3}
+@SB {Event Conditional} @Defn @Math{P(A bar B) = {P(A intersection B)} over P(B)}
+@SB {Event Independence} @Defn @M{P(A "|" B) = P(A "|" not B) = P(A)}
+}
 
 @End @Text

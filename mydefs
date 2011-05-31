@@ -41,11 +41,11 @@ def @VLine {
 }
 
 def @Defn left x right y {
-    @I {x}: |1f {y}
+    @I {x}: //0.8f |2f {y}
 }
 
 macro @BB {
-    //1.5f
+    //2f
 }
 
 macro @SB {
